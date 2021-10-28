@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Deactivate : MonoBehaviour
 {
-    public float lifetimemax=5;
-    public float lifetime=5;
+    public float lifetimemax=30;
+    public float lifetime=30;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,7 +31,18 @@ public class Deactivate : MonoBehaviour
     IEnumerable Timeout()
     {
         yield return new WaitForSeconds(5);
+        lifetime = lifetimemax;
         gameObject.SetActive(false);
 
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision!=null)
+        {
+            lifetime = lifetimemax;
+            gameObject.SetActive(false);
+        }
+        //Debug.Log("This object is colliding");
     }
 }

@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - PlayerBottom
+  - Fire
+  - NormalApple
+  - EvilApple
   layers:
   - Default
   - TransparentFX
